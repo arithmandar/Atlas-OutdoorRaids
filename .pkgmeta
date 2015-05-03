@@ -1,0 +1,8 @@
+package-as: Atlas_OutdoorRaids
+
+manual-changelog:
+    filename: Docs/ChangeLog.txt
+    markup-type: plain
+    
+enable-nolib-creation: no
+
