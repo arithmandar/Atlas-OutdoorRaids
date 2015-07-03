@@ -73,6 +73,7 @@ local myData = {
 		{ WHIT..INDENT..Atlas_GetBossName("Giant Lasher", 1211, 3) };
 		{ WHIT..INDENT..Atlas_GetBossName("Untamed Mandragora", 1211, 2) };
 		{ WHIT.." 3) "..Atlas_GetBossName("Rukhmar", 1262) };
+		{ WHIT.." 4) "..Atlas_GetBossName("Supreme Lord Kazzak", 1452) };
 	};
 	Pandaria = {
 		ZoneName = { AL["Pandaria World Bosses"] };
