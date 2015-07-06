@@ -1,4 +1,4 @@
-$Id: ChangeLog.txt 2275 2015-03-01 07:52:20Z arithmandar $
+$Id$
 Atlas, a World of Warcraft instance map browser
 Copyright 2005 ~ 2010 - Dan Gilbert <dan.b.gilbert@gmail.com>
 Copyright 2010 - Lothaer <lothayer@gmail.com>, Atlas Team
@@ -7,6 +7,11 @@ Copyright 2011 ~ 2015 - Arith Hsu, Atlas Team <atlas.addon@gmail.com>
 ==============
 = Change Log =
 ==============
+
+v1.32.00 (Jul. XX, 2015)
+------------------------
+- TOC update to support WoW 6.2
+
 
 v1.31.01 (Jul. XX, 2015)
 ------------------------
