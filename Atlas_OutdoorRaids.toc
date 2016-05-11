@@ -12,9 +12,9 @@
 ## Notes-koKR: 야외 레이드
 ## Notes-zhCN: 户外首领战斗
 ## Notes-zhTW: Atlas 戶外首領地圖插件
-## Version: 1.32.00
+## Version: 1.32.01
 ## Author: arith, Dynaletik, dubcat, Resike
-## X-Date: Jul. 13, 2015
+## X-Date: May 10, 2016
 ## X-Credits: Dan Gilbert, Lothaer
 ## X-Email: atlas.addon@gmail.com
 ## X-Website: http://www.atlasmod.com
@@ -23,3 +23,4 @@
 
 Locale\Locales.xml
 Atlas_OutdoorRaids.lua
+Atlas_OutdoorRaids_DB.lua

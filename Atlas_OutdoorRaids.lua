@@ -43,7 +43,7 @@ local INDENT = "      ";
 local myCategory = AL["Outdoor Raid Encounters"];
 
 local myData = {
-	DoomLordKazzak = {
+	OR_DoomLordKazzak = {
 		ZoneName = { Atlas_GetBossName("Doom Lord Kazzak") };
 		Location = { BZ["Hellfire Peninsula"] };
 		LevelRange = "70+";
@@ -54,14 +54,14 @@ local myData = {
 		{ WHIT.."4) "..BZ["Forge Camp: Mageddon"] };
 		{ WHIT.."5) "..BZ["Thrallmar"] };
 	};
-	Doomwalker = {
+	OR_Doomwalker = {
 		ZoneName = { Atlas_GetBossName("Doomwalker") };
 		Location = { BZ["Shadowmoon Valley"] };
 		LevelRange = "70+";
 		PlayerLimit = "40";
 		{ WHIT.."1) "..Atlas_GetBossName("Doomwalker") };
 	};
-	Draenor = {
+	OR_Draenor = {
 		ZoneName = { AL["Draenor World Bosses"] };
 		Location = { BZ["Draenor"] };
 		LevelRange = "100+";
@@ -75,7 +75,7 @@ local myData = {
 		{ WHIT.." 3) "..Atlas_GetBossName("Rukhmar", 1262) };
 		{ WHIT.." 4) "..Atlas_GetBossName("Supreme Lord Kazzak", 1452) };
 	};
-	Pandaria = {
+	OR_Pandaria = {
 		ZoneName = { AL["Pandaria World Bosses"] };
 		Location = { BZ["Pandaria"] };
 		LevelRange = "90+";
@@ -94,7 +94,7 @@ local myData = {
 		{ WHIT..INDENT..Atlas_GetBossName("Xuen, The White Tiger", 860) };
 		{ WHIT..INDENT..Atlas_GetBossName("Yu'lon, The Jade Serpent", 858) };
 	};
-	Skettis = {
+	OR_Skettis = {
 		ZoneName = { BZ["Skettis"] };
 		Location = { BZ["Blackwind Valley"]..", "..BZ["Terokkar Forest"] };
 		LevelRange = "70+";
