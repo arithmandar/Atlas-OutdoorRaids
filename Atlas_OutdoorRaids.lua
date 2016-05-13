@@ -4,7 +4,7 @@
 	Atlas, a World of Warcraft instance map browser
 	Copyright 2005 ~ 2010 - Dan Gilbert <dan.b.gilbert@gmail.com>
 	Copyright 2010 - Lothaer <lothayer@gmail.com>, Atlas Team
-	Copyright 2011 ~ 2015 - Arith Hsu, Atlas Team <atlas.addon@gmail.com>
+	Copyright 2011 ~ 2016 - Arith Hsu, Atlas Team <atlas.addon@gmail.com>
 
 	This file is part of Atlas.
 
@@ -48,18 +48,18 @@ local myData = {
 		Location = { BZ["Hellfire Peninsula"] };
 		LevelRange = "70+";
 		PlayerLimit = "40";
-		{ WHIT.."1) "..Atlas_GetBossName("Doom Lord Kazzak") };
-		{ WHIT.."2) "..BZ["Invasion Point: Annihilator"] };
-		{ WHIT.."3) "..BZ["Forge Camp: Rage"] };
-		{ WHIT.."4) "..BZ["Forge Camp: Mageddon"] };
-		{ WHIT.."5) "..BZ["Thrallmar"] };
+		{ WHIT.."1) "..Atlas_GetBossName("Doom Lord Kazzak"), 10001 };
+		{ WHIT.."2) "..BZ["Invasion Point: Annihilator"], 10002 };
+		{ WHIT.."3) "..BZ["Forge Camp: Rage"], 10003 };
+		{ WHIT.."4) "..BZ["Forge Camp: Mageddon"], 10004 };
+		{ WHIT.."5) "..BZ["Thrallmar"], 10005 };
 	};
 	OR_Doomwalker = {
 		ZoneName = { Atlas_GetBossName("Doomwalker") };
 		Location = { BZ["Shadowmoon Valley"] };
 		LevelRange = "70+";
 		PlayerLimit = "40";
-		{ WHIT.."1) "..Atlas_GetBossName("Doomwalker") };
+		{ WHIT.."1) "..Atlas_GetBossName("Doomwalker"), 10001 };
 	};
 	OR_Draenor = {
 		ZoneName = { AL["Draenor World Bosses"] };
@@ -99,23 +99,23 @@ local myData = {
 		Location = { BZ["Blackwind Valley"]..", "..BZ["Terokkar Forest"] };
 		LevelRange = "70+";
 		PlayerLimit = "40";
-		{ WHIT.."1) "..BZ["Blackwind Landing"] };
+		{ WHIT.."1) "..BZ["Blackwind Landing"], 10001 };
 		{ WHIT..INDENT..AL["Sky Commander Adaris"] };
 		{ WHIT..INDENT..AL["Sky Sergeant Doryn"] };
 		{ WHIT..INDENT..AL["Skyguard Handler Deesak"] };
 		{ WHIT..INDENT..AL["Severin <Skyguard Medic>"] };
 		{ WHIT..INDENT..AL["Grella <Skyguard Quartermaster>"] };
 		{ WHIT..INDENT..AL["Hazzik"] };
-		{ WHIT.."2) "..AL["Ancient Skull Pile"] };
+		{ WHIT.."2) "..AL["Ancient Skull Pile"], 10002 };
 		{ WHIT..INDENT..AL["Terokk"].." ("..ALC["Summon"]..")" };
-		{ WHIT.."3) "..AL["Sahaak <Keeper of Scrolls>"] };
-		{ WHIT.."4) "..AL["Skyguard Prisoner"].." ("..ALC["Random"]..")" };
-		{ WHIT.."5) "..AL["Talonpriest Ishaal"] };
-		{ WHIT.."6) "..AL["Talonpriest Skizzik"] };
-		{ WHIT.."7) "..AL["Talonpriest Zellek"] };
-		{ WHIT.."8) "..AL["Hazzik's Package"] };
-		{ WHIT.."9) "..ALC["Graveyard"] };
-		{ GREN.."1') "..AL["Skull Pile"] };
+		{ WHIT.."3) "..AL["Sahaak <Keeper of Scrolls>"], 10003 };
+		{ WHIT.."4) "..AL["Skyguard Prisoner"].." ("..ALC["Random"]..")", 10004 };
+		{ WHIT.."5) "..AL["Talonpriest Ishaal"], 10005 };
+		{ WHIT.."6) "..AL["Talonpriest Skizzik"], 10006 };
+		{ WHIT.."7) "..AL["Talonpriest Zellek"], 10007 };
+		{ WHIT.."8) "..AL["Hazzik's Package"], 10008 };
+		{ WHIT.."9) "..ALC["Graveyard"], 10009 };
+		{ GREN.."1') "..AL["Skull Pile"], 10010 };
 		{ GREN..INDENT..AL["Darkscreecher Akkarai"].." ("..ALC["Summon"]..")" };
 		{ GREN..INDENT..AL["Gezzarak the Huntress"].." ("..ALC["Summon"]..")" };
 		{ GREN..INDENT..AL["Karrog"].." ("..ALC["Summon"]..")" };
