@@ -4,7 +4,7 @@
 	Atlas, a World of Warcraft instance map browser
 	Copyright 2005 ~ 2010 - Dan Gilbert <dan.b.gilbert@gmail.com>
 	Copyright 2010 - Lothaer <lothayer@gmail.com>, Atlas Team
-	Copyright 2011 ~ 2015 - Arith Hsu, Atlas Team <atlas.addon@gmail.com>
+	Copyright 2011 ~ 2016 - Arith Hsu, Atlas Team <atlas.addon@gmail.com>
 
 	This file is part of Atlas.
 
@@ -25,31 +25,8 @@
 --]]
 
 local AceLocale = LibStub:GetLibrary("AceLocale-3.0");
-local AL = AceLocale:NewLocale("Atlas_OutdoorRaids", "frFR", false);
--- Localize file must set above to false, for example:
---    local AL = AceLocale:NewLocale("Atlas_OutdoorRaids", "deDE", false);
+local L = AceLocale:NewLocale("Atlas_OutdoorRaids", "frFR", false);
 
-if AL then
-	AL["Ancient Skull Pile"] = "Ancienne pile de crânes";
-	AL["Darkscreecher Akkarai"] = "Akkarai le Hurle-sombre";
-	AL["Draenor World Bosses"] = "Boss de Monde de Draenor";
-	AL["Gezzarak the Huntress"] = "Gezzarak la Chasseresse";
-	AL["Grella <Skyguard Quartermaster>"] = "Grella <Intendante de la Garde-ciel>";
-	AL["Hazzik"] = "Hazzik";
-	AL["Hazzik's Package"] = "Paquet d'Hazzik";
-	AL["Karrog"] = "Karrog";
-	AL["Outdoor Raid Encounters"] = "Rencontres de raids extérieurs";
-	AL["Pandaria World Bosses"] = "Boss de Monde de Pandarie";
-	AL["Sahaak <Keeper of Scrolls>"] = "Sahaak <Gardiens des parchemins>";
-	AL["Severin <Skyguard Medic>"] = "Séverin <Infirmier de la Garde-ciel>";
-	AL["Skull Pile"] = "Pile de crânes";
-	AL["Sky Commander Adaris"] = "Commandant Adaris de la Garde-ciel";
-	AL["Sky Sergeant Doryn"] = "Sergent Doryn de la Garde-ciel";
-	AL["Skyguard Handler Deesak"] = "Dresseur Deesak de la Garde-ciel";
-	AL["Skyguard Prisoner"] = "Prisonnier de la Garde-ciel";
-	AL["Talonpriest Ishaal"] = "Prêtre de la serre Ishaal";
-	AL["Talonpriest Skizzik"] = "Prêtre de la serre Skizzik";
-	AL["Talonpriest Zellek"] = "Prêtre de la serre Zellek";
-	AL["Terokk"] = "Terokk";
-	AL["Vakkiz the Windrager"] = "Vakkiz le Ragevent";
+if L then
+--@localization(locale="frFR", format="lua_additive_table")@
 end

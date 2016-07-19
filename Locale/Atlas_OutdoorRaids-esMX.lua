@@ -4,7 +4,7 @@
 	Atlas, a World of Warcraft instance map browser
 	Copyright 2005 ~ 2010 - Dan Gilbert <dan.b.gilbert@gmail.com>
 	Copyright 2010 - Lothaer <lothayer@gmail.com>, Atlas Team
-	Copyright 2011 ~ 2015 - Arith Hsu, Atlas Team <atlas.addon@gmail.com>
+	Copyright 2011 ~ 2016 - Arith Hsu, Atlas Team <atlas.addon@gmail.com>
 
 	This file is part of Atlas.
 
@@ -33,30 +33,8 @@
 
 --]]
 local AceLocale = LibStub:GetLibrary("AceLocale-3.0");
-local AL = AceLocale:NewLocale("Atlas_OutdoorRaids", "esMX", false);
--- Localize file must set above to false, for example:
---    local AL = AceLocale:NewLocale("Atlas_OutdoorRaids", "deDE", false);
+local L = AceLocale:NewLocale("Atlas_OutdoorRaids", "esMX", false);
 
-if AL then
-	AL["Ancient Skull Pile"] = "Montón de cráneos antiguos";
-	AL["Darkscreecher Akkarai"] = "Estridador oscuro Akkarai";
-	AL["Gezzarak the Huntress"] = "Gezzarak la Cazadora";
-	AL["Grella <Skyguard Quartermaster>"] = "Grella <Intendente de la Guardia del cielo>";
-	AL["Hazzik"] = "Hazzik";
-	AL["Hazzik's Package"] = "Paquete de Hazzik";
-	AL["Karrog"] = "Karrog";
-	AL["Outdoor Raid Encounters"] = "Encuentros de banda";
-	AL["Pandaria World Bosses"] = "Jefes del Mundo en Pandaria";
-	AL["Sahaak <Keeper of Scrolls>"] = "Sahaak <Vigilante de pergaminos>";
-	AL["Severin <Skyguard Medic>"] = "Severin <Médico de la Guardia del cielo>";
-	AL["Skull Pile"] = "Montón de cráneos";
-	AL["Sky Commander Adaris"] = "Comandante del cielo Adaris";
-	AL["Sky Sergeant Doryn"] = "Sargento del cielo Doryn";
-	AL["Skyguard Handler Deesak"] = "Cuidador de la Guardia del cielo Deesak";
-	AL["Skyguard Prisoner"] = "Prisionero de la Guardia del cielo";
-	AL["Talonpriest Ishaal"] = "Sacerdote de la garra Ishaal";
-	AL["Talonpriest Skizzik"] = "Sacerdote de la garra Skizzik";
-	AL["Talonpriest Zellek"] = "Sacerdote de la garra Zellek";
-	AL["Terokk"] = "Terokk";
-	AL["Vakkiz the Windrager"] = "Vakkiz el Furibundo del Viento";
+if L then
+--@localization(locale="esMX", format="lua_additive_table")@
 end
