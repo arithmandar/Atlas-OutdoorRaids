@@ -51,6 +51,7 @@ if L then
 	L["Talonpriest Zellek"] = "魔爪祭司札列克";
 	L["Terokk"] = "泰洛克";
 	L["Vakkiz the Windrager"] = "『風怒者』瓦奇茲";
+	L["Broken Isles World Bosses"] = "破碎群島世界首領";
 --@end-do-not-package@
 --@localization(locale="zhTW", format="lua_additive_table")@
 end
