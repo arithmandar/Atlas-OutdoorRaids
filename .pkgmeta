@@ -7,4 +7,4 @@ manual-changelog:
 enable-nolib-creation: no
 
 ignore:
-    - Images/OR_BrokenIsles.psd
+    - Images/PSD
