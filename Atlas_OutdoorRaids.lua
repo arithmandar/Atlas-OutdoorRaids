@@ -4,7 +4,7 @@
 	Atlas, a World of Warcraft instance map browser
 	Copyright 2005 ~ 2010 - Dan Gilbert <dan.b.gilbert@gmail.com>
 	Copyright 2010 - Lothaer <lothayer@gmail.com>, Atlas Team
-	Copyright 2011 ~ 2016 - Arith Hsu, Atlas Team <atlas.addon@gmail.com>
+	Copyright 2011 ~ 2017 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
 
 	This file is part of Atlas.
 
@@ -70,7 +70,7 @@ local myData = {
 		LargeMap = "OR_BrokenIsles";
 		{ WHIT.." 1) "..Atlas_GetBossName("Calamir", 1774), 1774 };				-- (Azsuna)
 		{ WHIT.." 2) "..Atlas_GetBossName("Withered J'im", 1796), 1796 };			-- (Azsuna)
-		{ WHIT.." 3) "..Atlas_GetBossName("Levantus", 1769), 1769 };				-- (Stormheim? Looks to be in Azsuna)
+		{ WHIT.." 3) "..Atlas_GetBossName("Levantus", 1769), 1769 };				-- (Azsuna)
 		{ WHIT.." 4) "..Atlas_GetBossName("Humongris", 1770), 1770 };				-- (Val'sharah)
 		{ WHIT.." 5) "..Atlas_GetBossName("Shar'thos", 1763), 1763 };				-- (Val'sharah)
 		{ WHIT.." 6) "..Atlas_GetBossName("Drugon the Frostblood", 1789), 1789 };		-- (Highmountain)
