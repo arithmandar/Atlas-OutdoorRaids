@@ -67,6 +67,7 @@ local myData = {
 		LevelRange = "110+";
 		PlayerLimit = "40";
 		JournalInstanceID = "822";
+		WorldMapID = "1007";
 		LargeMap = "OR_BrokenIsles";
 		{ WHIT.." 1) "..Atlas_GetBossName("Calamir", 1774), 1774 };				-- (Azsuna)
 		{ WHIT.." 2) "..Atlas_GetBossName("Withered J'im", 1796), 1796 };			-- (Azsuna)
@@ -82,6 +83,9 @@ local myData = {
 		{ INDENT..WHIT..Atlas_GetBossName("Reaver Jdorn", 1756, 3), 1756 };
 		{ WHIT.."10) "..Atlas_GetBossName("Nithogg", 1749), 1749 };				-- (Stormheim)
 		{ WHIT.."11) "..Atlas_GetBossName("Na'zak the Fiend", 1783), 1783 };			-- (Suramar)
+		{ "" };
+		{ LBLU..ACHIEVEMENTS..ALC["Colon"] };
+		{ "Unleashed Monstrosities", "ac=11160" };
 	};
 	OR_Draenor = {
 		ZoneName = { L["Draenor World Bosses"] };
@@ -89,6 +93,7 @@ local myData = {
 		LevelRange = "100-110";
 		PlayerLimit = "--";
 		JournalInstanceID = "557";
+		WorldMapID = "962";
 		LargeMap = "OR_Draenor";
 		{ WHIT.." 1) "..Atlas_GetBossName("Drov the Ruiner", 1291), 1291 };
 		{ WHIT..INDENT..Atlas_GetBossName("Frenzied Rumbler", 1291, 2), 1291 };
@@ -97,6 +102,11 @@ local myData = {
 		{ WHIT..INDENT..Atlas_GetBossName("Untamed Mandragora", 1211, 2), 1211 };
 		{ WHIT.." 3) "..Atlas_GetBossName("Rukhmar", 1262), 1262 };
 		{ WHIT.." 4) "..Atlas_GetBossName("Supreme Lord Kazzak", 1452), 1452 };
+		{ "" };
+		{ LBLU..ACHIEVEMENTS..ALC["Colon"] };
+		{ "Goliaths of Gorgrond", "ac=9423" };
+		{ "So Grossly Incandescent", "ac=9425" };
+		{ "The Legion Will NOT Conquer All", "ac=10071" };
 	};
 	OR_Pandaria = {
 		ZoneName = { L["Pandaria World Bosses"] };
@@ -104,6 +114,7 @@ local myData = {
 		LevelRange = "90-100";
 		PlayerLimit = "--";
 		JournalInstanceID = "322";
+		WorldMapID = "862";
 		LargeMap = "OR_Pandaria";
 		{ WHIT.." 1) "..Atlas_GetBossName("Nalak, The Storm Lord", 814), 814 };
 		{ WHIT.." 2) "..Atlas_GetBossName("Oondasta", 826), 826 };
@@ -117,6 +128,13 @@ local myData = {
 		{ WHIT..INDENT..Atlas_GetBossName("Niuzao, The Black Ox", 859), 859 };
 		{ WHIT..INDENT..Atlas_GetBossName("Xuen, The White Tiger", 860), 860 };
 		{ WHIT..INDENT..Atlas_GetBossName("Yu'lon, The Jade Serpent", 858), 858 };
+		{ "" };
+		{ LBLU..ACHIEVEMENTS..ALC["Colon"] };
+		{ "Praise the Sun!", "ac=8028" };
+		{ "Millions of Years of Evolution vs. My Fist", "ac=8123" };
+		{ "Settle Down, Bro", "ac=6480" };
+		{ "Extinction Event", "ac=6517" };
+		{ "Celestial Challenge", "ac=8535" };
 	};
 	OR_Skettis = {
 		ZoneName = { BZ["Skettis"] };

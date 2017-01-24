@@ -8,6 +8,12 @@ Copyright 2011 ~ 2017 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
 = Change Log =
 ==============
 
+v1.37.00 (Jan. 24, 2017)
+------------------------
+- Added instance's achievements
+- Translation update:
+  - Spanish (Lawghter)
+
 v1.36.00 (Jan. 19, 2017)
 ------------------------
 - Added Ana-Mouz's location in Broken Isles
