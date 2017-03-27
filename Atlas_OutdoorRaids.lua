@@ -83,6 +83,10 @@ local myData = {
 		{ INDENT..WHIT..Atlas_GetBossName("Reaver Jdorn", 1756, 3), 1756 };
 		{ WHIT.."10) "..Atlas_GetBossName("Nithogg", 1749), 1749 };				-- (Stormheim)
 		{ WHIT.."11) "..Atlas_GetBossName("Na'zak the Fiend", 1783), 1783 };			-- (Suramar)
+		{ WHIT.."12) "..Atlas_GetBossName("Brutallus", 1883), 1883 };
+		{ WHIT.."13) "..Atlas_GetBossName("Malificus", 1884), 1884 };
+		{ WHIT.."14) "..Atlas_GetBossName("Si'vash", 1885), 1885 };
+		{ WHIT.."15) "..Atlas_GetBossName("Apocron", 1956), 1956 };
 		{ "" };
 		{ LBLU..ACHIEVEMENTS..ALC["Colon"] };
 		{ "Unleashed Monstrosities", "ac=11160" };
