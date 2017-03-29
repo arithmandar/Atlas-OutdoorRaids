@@ -8,6 +8,12 @@ Copyright 2011 ~ 2017 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
 = Change Log =
 ==============
 
+v1.39.01 (Mar. 29, 2017)
+------------------------
+- Fixed the issue that by right-clicking on world boss' name in 
+  legend panel won't bring up AtlasLoot window
+- Added location of Malificus
+
 v1.39.00 (Mar. 27, 2017)
 ------------------------
 - Toc update to support WoW 7.2
