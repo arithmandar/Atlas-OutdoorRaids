@@ -50,7 +50,7 @@ local myDB = {
 		-- { 12, 1883, }; -- Brutallus
 		{ 13, 1884, 312, 335, 580, 438 }; -- Malificus
 		-- { 14, 1885, }; -- Si'vash
-		-- { 15, 1956, }; -- Apocron
+		{ 15, 1956, 315, 369, 581, 482}; -- Apocron
 	};
 	OR_Draenor = {
 		{ 1, 1291, 271, 119, 517, 153 }; -- Drov the Ruiner
