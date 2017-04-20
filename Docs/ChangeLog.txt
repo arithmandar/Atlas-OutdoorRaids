@@ -8,6 +8,10 @@ Copyright 2011 ~ 2017 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
 = Change Log =
 ==============
 
+v1.41.01 (Apr. 20, 2017)
+------------------------
+- Added achievement for world bosses in Broken Shore - Terrors of the Shore
+
 v1.41.00 (Apr. 20, 2017)
 ------------------------
 - Added location of Apocron

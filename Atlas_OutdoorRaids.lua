@@ -96,6 +96,7 @@ local myData = {
 		{ "" };
 		{ LBLU..ACHIEVEMENTS..ALC["Colon"] };
 		{ "Unleashed Monstrosities", "ac=11160" };
+		{ "Terrors of the Shore", "ac=11786" };
 	};
 	OR_Draenor = {
 		ZoneName = { L["Draenor World Bosses"] };
