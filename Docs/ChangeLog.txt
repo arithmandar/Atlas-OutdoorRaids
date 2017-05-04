@@ -8,6 +8,13 @@ Copyright 2011 ~ 2017 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
 = Change Log =
 ==============
 
+v1.41.03 (May 04, 2017)
+------------------------
+- Added location of Brutallus
+- Added map of Broken Shore
+- Translation update:
+  - Russian (BLizzatron)
+
 v1.41.02 (Apr. 26, 2017)
 ------------------------
 - Added location of Si'vash

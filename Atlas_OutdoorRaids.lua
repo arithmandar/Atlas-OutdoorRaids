@@ -98,6 +98,24 @@ local myData = {
 		{ "Unleashed Monstrosities", "ac=11160" };
 		{ "Terrors of the Shore", "ac=11786" };
 	};
+	OR_BrokenShore = {
+		ZoneName = { L["Broken Shore World Bosses"] };
+		Location = { BZ["Broken Shore"] };
+		LevelRange = "110+";
+		PlayerLimit = "40";
+		JournalInstanceID = "822";
+		WorldMapID = "1021";
+		LargeMap = "OR_BrokenShore";
+		Module = "Atlas_Legion";
+		{ WHIT.."12) "..Atlas_GetBossName("Brutallus", 1883), 1883 };
+		{ WHIT.."13) "..Atlas_GetBossName("Malificus", 1884), 1884 };
+		{ INDENT..ORNG..ALC["L-Parenthesis"]..sBF("Armies of Legionfall")..ALC["R-Parenthesis"] };
+		{ WHIT.."14) "..Atlas_GetBossName("Si'vash", 1885), 1885 };
+		{ WHIT.."15) "..Atlas_GetBossName("Apocron", 1956), 1956 };
+		{ "" };
+		{ LBLU..ACHIEVEMENTS..ALC["Colon"] };
+		{ "Terrors of the Shore", "ac=11786" };
+	};
 	OR_Draenor = {
 		ZoneName = { L["Draenor World Bosses"] };
 		Location = { BZ["Draenor"] };

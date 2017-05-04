@@ -30,7 +30,7 @@
 ## Notes-zhTW: Atlas 戶外首領地圖插件
 #@end-debug@
 ## Version: @project-version@
-## Author: arith, Dynaletik, dubcat
+## Author: arith, dubcat
 ## X-Date: @project-date-iso@
 ## X-Credits: Dan Gilbert, Lothaer
 ## X-Email: atlas.addon at gmail dot com

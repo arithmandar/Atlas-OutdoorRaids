@@ -54,6 +54,7 @@ if L then
 	L["Terokk"] = "Terokk";
 	L["Vakkiz the Windrager"] = "Vakkiz the Windrager";
 	L["Broken Isles World Bosses"] = "Broken Isles World Bosses";
+	L["Broken Shore World Bosses"] = "Broken Shore World Bosses";
 --@end-do-not-package@
 --@localization(locale="enUS", format="lua_additive_table")@
 end

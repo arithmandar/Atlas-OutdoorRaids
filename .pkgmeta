@@ -8,3 +8,4 @@ enable-nolib-creation: no
 
 ignore:
     - Images/PSD
+    - Images/OR_BrokenShore/PSD
