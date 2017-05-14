@@ -8,6 +8,10 @@ Copyright 2011 ~ 2017 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
 = Change Log =
 ==============
 
+v1.41.04 (May 14, 2017)
+------------------------
+- Enhanced AtlasLoot integration feature
+
 v1.41.03 (May 04, 2017)
 ------------------------
 - Added location of Brutallus
