@@ -40,4 +40,3 @@
 
 Locale\Locales.xml
 Atlas_OutdoorRaids.lua
-Atlas_OutdoorRaids_DB.lua
