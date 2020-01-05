@@ -4,7 +4,7 @@
 	Atlas, a World of Warcraft instance map browser
 	Copyright 2005 ~ 2010 - Dan Gilbert <dan.b.gilbert@gmail.com>
 	Copyright 2010 - Lothaer <lothayer@gmail.com>, Atlas Team
-	Copyright 2011 ~ 2019 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
+	Copyright 2011 ~ 2020 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
 
 	This file is part of Atlas.
 
@@ -31,30 +31,36 @@ local L = AceLocale:NewLocale("Atlas_OutdoorRaids", "enUS", true);
 
 if L then
 --@do-not-package@
-	L["Ancient Skull Pile"] = "Ancient Skull Pile";
-	L["Darkscreecher Akkarai"] = "Darkscreecher Akkarai";
-	L["Draenor World Bosses"] = "Draenor World Bosses";
-	L["Gezzarak the Huntress"] = "Gezzarak the Huntress";
-	L["Grella <Skyguard Quartermaster>"] = "Grella <Skyguard Quartermaster>";
-	L["Hazzik"] = "Hazzik";
-	L["Hazzik's Package"] = "Hazzik's Package";
-	L["Karrog"] = "Karrog";
-	L["Outdoor Raid Encounters"] = "Outdoor Raid Encounters";
-	L["Pandaria World Bosses"] = "Pandaria World Bosses";
-	L["Sahaak <Keeper of Scrolls>"] = "Sahaak <Keeper of Scrolls>";
-	L["Severin <Skyguard Medic>"] = "Severin <Skyguard Medic>";
-	L["Skull Pile"] = "Skull Pile";
-	L["Sky Commander Adaris"] = "Sky Commander Adaris";
-	L["Sky Sergeant Doryn"] = "Sky Sergeant Doryn";
-	L["Skyguard Handler Deesak"] = "Skyguard Handler Deesak";
-	L["Skyguard Prisoner"] = "Skyguard Prisoner";
-	L["Talonpriest Ishaal"] = "Talonpriest Ishaal";
-	L["Talonpriest Skizzik"] = "Talonpriest Skizzik";
-	L["Talonpriest Zellek"] = "Talonpriest Zellek";
-	L["Terokk"] = "Terokk";
-	L["Vakkiz the Windrager"] = "Vakkiz the Windrager";
-	L["Broken Isles World Bosses"] = "Broken Isles World Bosses";
-	L["Broken Shore World Bosses"] = "Broken Shore World Bosses";
+	L["Ancient Skull Pile"] = "Ancient Skull Pile"
+	L["Darkscreecher Akkarai"] = "Darkscreecher Akkarai"
+	L["Draenor World Bosses"] = "Draenor World Bosses"
+	L["Gezzarak the Huntress"] = "Gezzarak the Huntress"
+	L["Grella <Skyguard Quartermaster>"] = "Grella <Skyguard Quartermaster>"
+	L["Hazzik"] = "Hazzik"
+	L["Hazzik's Package"] = "Hazzik's Package"
+	L["Karrog"] = "Karrog"
+	L["Outdoor Raid Encounters"] = "Outdoor Raid Encounters"
+	L["Pandaria World Bosses"] = "Pandaria World Bosses"
+	L["Sahaak <Keeper of Scrolls>"] = "Sahaak <Keeper of Scrolls>"
+	L["Severin <Skyguard Medic>"] = "Severin <Skyguard Medic>"
+	L["Skull Pile"] = "Skull Pile"
+	L["Sky Commander Adaris"] = "Sky Commander Adaris"
+	L["Sky Sergeant Doryn"] = "Sky Sergeant Doryn"
+	L["Skyguard Handler Deesak"] = "Skyguard Handler Deesak"
+	L["Skyguard Prisoner"] = "Skyguard Prisoner"
+	L["Talonpriest Ishaal"] = "Talonpriest Ishaal"
+	L["Talonpriest Skizzik"] = "Talonpriest Skizzik"
+	L["Talonpriest Zellek"] = "Talonpriest Zellek"
+	L["Terokk"] = "Terokk"
+	L["Vakkiz the Windrager"] = "Vakkiz the Windrager"
+	L["Broken Isles World Bosses"] = "Broken Isles World Bosses"
+	L["Broken Shore World Bosses"] = "Broken Shore World Bosses"
+	L["Kul Tiras World Bosses"] = "Kul Tiras World Bosses"
+	L["Zuldazar World Bosses"] = "Zuldazar World Bosses"
+	L["Eastern Kingdoms World Bosses"] = "Eastern Kingdoms World Bosses"
+	L["Kalimdor World Bosses"] = "Kalimdor World Bosses"
+	L["Battle for Azeroth"] = "Battle for Azeroth"
+
 --@end-do-not-package@
 --@localization(locale="enUS", format="lua_additive_table")@
 end
