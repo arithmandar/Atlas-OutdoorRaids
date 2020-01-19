@@ -56,7 +56,7 @@ if L then
 	L["Broken Isles World Bosses"] = "Broken Isles World Bosses"
 	L["Broken Shore World Bosses"] = "Broken Shore World Bosses"
 	L["Kul Tiras World Bosses"] = "Kul Tiras World Bosses"
-	L["Zuldazar World Bosses"] = "Zuldazar World Bosses"
+	L["Zandalar World Bosses"] = "Zandalar World Bosses"
 	L["Eastern Kingdoms World Bosses"] = "Eastern Kingdoms World Bosses"
 	L["Kalimdor World Bosses"] = "Kalimdor World Bosses"
 	L["Battle for Azeroth"] = "Battle for Azeroth"

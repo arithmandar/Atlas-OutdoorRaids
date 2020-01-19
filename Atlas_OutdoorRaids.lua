@@ -62,9 +62,9 @@ local myData = {
 		{ WHIT.." 2) "..Atlas_GetBossName("Azurethos, The Winged Typhoon", 2199), 2199 },
 		{ WHIT.." 3) "..Atlas_GetBossName("Hailstone Construct", 2197), 2197 },
 	},
-	OR_Zuldazar = {
-		ZoneName = { L["Zuldazar World Bosses"] },
-		Location = { BZ["Zuldazar"] },
+	OR_Zandalar = {
+		ZoneName = { L["Zandalarr World Bosses"] },
+		Location = { BZ["Zandalar"] },
 		LevelRange = "120+",
 		PlayerLimit = "40",
 		JournalInstanceID = 1028,

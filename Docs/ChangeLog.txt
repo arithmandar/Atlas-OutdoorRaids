@@ -8,6 +8,11 @@ Copyright 2011 ~ 2020 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
 = Change Log =
 ==============
 
+v1.47.00 (Jan. 20, 2020)
+------------------------
+- ToC update to support WoW 8.3.0
+- Corrected Zuldazar to Zandalar
+
 v1.46.01 (Jan. 06, 2020)
 ------------------------
 - Integration with AtlasLoot
