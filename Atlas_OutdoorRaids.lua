@@ -63,7 +63,7 @@ local myData = {
 		{ WHIT.." 3) "..Atlas_GetBossName("Hailstone Construct", 2197), 2197 },
 	},
 	OR_Zandalar = {
-		ZoneName = { L["Zandalarr World Bosses"] },
+		ZoneName = { L["Zandalar World Bosses"] },
 		Location = { BZ["Zandalar"] },
 		LevelRange = "120+",
 		PlayerLimit = "40",
