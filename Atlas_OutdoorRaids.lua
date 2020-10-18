@@ -49,6 +49,10 @@ local function sBF(key)
 	return BF[key] and BF[key] or key
 end
 
+local function Atlas_GetBossName(bossname, encounterID, creatureIndex)
+	return Atlas:GetBossName(bossname, encounterID, creatureIndex, private.module_name)
+end
+
 local myData = {
 	OR_KulTiras = {
 		ZoneName = { L["Kul Tiras World Bosses"] },
