@@ -60,6 +60,8 @@ if L then
 	L["Eastern Kingdoms World Bosses"] = "Eastern Kingdoms World Bosses"
 	L["Kalimdor World Bosses"] = "Kalimdor World Bosses"
 	L["Battle for Azeroth"] = "Battle for Azeroth"
+	L["Doom Lord Kazzak"] = "Doom Lord Kazzak"
+	L["Doomwalker"] = "Doomwalker"
 
 --@end-do-not-package@
 --@localization(locale="enUS", format="lua_additive_table")@
