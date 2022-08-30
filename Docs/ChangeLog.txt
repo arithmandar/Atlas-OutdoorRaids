@@ -8,6 +8,12 @@ Copyright 2011 ~ 2022 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
 = Change Log =
 ==============
 
+v1.51.02 (Aug. 30, 2022)
+------------------------
+- Added support for Classic WoW 1.14.3
+- Added support for Classic Wrath of the Lich King WoW 3.4.0
+- Added support for BCC WoW 2.5.4
+
 v1.51.01 (Aug. 17, 2022)
 ------------------------
 - Toc update to support WoW 9.2.7

@@ -39,4 +39,5 @@
 ## RequiredDeps: Atlas
 
 Locale\Locales.xml
-Atlas_OutdoorRaids.lua
+Core\Constants.lua
+Core\Data.lua

@@ -26,8 +26,6 @@
 local _G = getfenv(0)
 
 local FOLDER_NAME, private = ...
-private.addon_name = "Atlas_OutdoorRaids"
-private.module_name = "OutdoorRaids"
 
 local LibStub = _G.LibStub
 local Atlas = LibStub("AceAddon-3.0"):GetAddon("Atlas")

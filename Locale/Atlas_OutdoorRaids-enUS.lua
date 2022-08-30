@@ -62,6 +62,22 @@ if L then
 	L["Battle for Azeroth"] = "Battle for Azeroth"
 	L["Doom Lord Kazzak"] = "Doom Lord Kazzak"
 	L["Doomwalker"] = "Doomwalker"
+	
+	L["Azuregos"] = "Azuregos"
+	L["Dragons of Nightmare"] = "Dragons of Nightmare"
+	L["Rothos"] = "Rothos"
+	L["Dreamtracker"] = "Dreamtracker"
+	L["Lethlas"] = "Lethlas"
+	L["Dreamroarer"] = "Dreamroarer"
+	L["Phantim"] = "Phantim"
+	L["Dreamstalker"] = "Dreamstalker"
+	L["The Dragons"] = "The Dragons"
+	L["Lethon"] = "Lethon"
+	L["Emeriss"] = "Emeriss"
+	L["Taerar"] = "Taerar"
+	L["Ysondre"] = "Ysondre"
+	L["Highlord Kruul"] = "Highlord Kruul"
+	L["Various"] = "Various"
 
 --@end-do-not-package@
 --@localization(locale="enUS", format="lua_additive_table")@
