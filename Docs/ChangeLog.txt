@@ -8,6 +8,10 @@ Copyright 2011 ~ 2022 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
 = Change Log =
 ==============
 
+v1.52.00 (Nov. 06, 2022)
+------------------------
+- Toc update to support WoW 10.0.0
+
 v1.51.02 (Aug. 30, 2022)
 ------------------------
 - Added support for Classic WoW 1.14.3
