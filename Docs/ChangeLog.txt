@@ -8,6 +8,10 @@ Copyright 2011 ~ 2022 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
 = Change Log =
 ==============
 
+v1.52.02 (Nov. 19, 2022)
+------------------------
+- Updated Dragon Isles' instance ID and map ID
+
 v1.52.01 (Nov. 19, 2022)
 ------------------------
 - Toc update to support WoW 10.0.2
