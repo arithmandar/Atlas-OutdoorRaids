@@ -27,7 +27,6 @@ local AceLocale = LibStub:GetLibrary("AceLocale-3.0");
 local L = AceLocale:NewLocale("Atlas_OutdoorRaids", "zhTW", false);
 
 if L then
---@do-not-package@
 	L["Ancient Skull Pile"] = "古老的顱骨堆"
 	L["Darkscreecher Akkarai"] = "黑暗尖叫者阿卡萊"
 	L["Draenor World Bosses"] = "德拉諾世界首領"
