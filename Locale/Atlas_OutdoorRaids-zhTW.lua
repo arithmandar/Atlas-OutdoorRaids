@@ -1,10 +1,9 @@
--- $Id$
 --[[
 
 	Atlas, a World of Warcraft instance map browser
 	Copyright 2005 ~ 2010 - Dan Gilbert <dan.b.gilbert@gmail.com>
 	Copyright 2010 - Lothaer <lothayer@gmail.com>, Atlas Team
-	Copyright 2011 ~ 2023 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
+	Copyright 2011 ~ 2026 - Arith Hsu, Atlas Team 
 
 	This file is part of Atlas.
 
@@ -76,6 +75,4 @@ if L then
 	L["Ysondre"] = "伊索德雷"
 	L["Highlord Kruul"] = "卡魯歐大領主"
 	L["Various"] = "多處"
---@end-do-not-package@
---@localization(locale="zhTW", format="lua_additive_table")@
 end

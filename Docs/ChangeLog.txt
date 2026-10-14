@@ -1,12 +1,17 @@
-$Id$
 Atlas, a World of Warcraft instance map browser
 Copyright 2005 ~ 2010 - Dan Gilbert <dan.b.gilbert@gmail.com>
 Copyright 2010 - Lothaer <lothayer@gmail.com>, Atlas Team
-Copyright 2011 ~ 2023 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
+Copyright 2011 ~ 2026 - Arith Hsu, Atlas Team 
 
 ==============
 = Change Log =
 ==============
+
+v1.53.00 (Oct. 14, 2026)
+------------------------
+- Toc update to support WoW 11509, 20506, 50504, 120100
+- Migrate from CurseForge SVN to GitHub
+- Added auto-packaging to support both CurseForge and WoWInterface
 
 v1.52.04 (Jul. 29, 2023)
 ------------------------

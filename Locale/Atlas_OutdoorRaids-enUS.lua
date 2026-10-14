@@ -1,10 +1,9 @@
--- $Id$
 --[[
 
 	Atlas, a World of Warcraft instance map browser
 	Copyright 2005 ~ 2010 - Dan Gilbert <dan.b.gilbert@gmail.com>
 	Copyright 2010 - Lothaer <lothayer@gmail.com>, Atlas Team
-	Copyright 2011 ~ 2023 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
+	Copyright 2011 ~ 2026 - Arith Hsu, Atlas Team 
 
 	This file is part of Atlas.
 
@@ -30,7 +29,6 @@ local L = AceLocale:NewLocale("Atlas_OutdoorRaids", "enUS", true);
 --    local L = AceLocale:NewLocale("Atlas_OutdoorRaids", "deDE", false);
 
 if L then
---@do-not-package@
 	L["Ancient Skull Pile"] = "Ancient Skull Pile"
 	L["Darkscreecher Akkarai"] = "Darkscreecher Akkarai"
 	L["Draenor World Bosses"] = "Draenor World Bosses"
@@ -79,7 +77,4 @@ if L then
 	L["Ysondre"] = "Ysondre"
 	L["Highlord Kruul"] = "Highlord Kruul"
 	L["Various"] = "Various"
-
---@end-do-not-package@
---@localization(locale="enUS", format="lua_additive_table")@
 end
