@@ -1,10 +1,9 @@
--- $Id$
 --[[
 
 	Atlas, a World of Warcraft instance map browser
 	Copyright 2005 ~ 2010 - Dan Gilbert <dan.b.gilbert@gmail.com>
 	Copyright 2010 - Lothaer <lothayer@gmail.com>, Atlas Team
-	Copyright 2011 ~ 2023 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
+	Copyright 2011 ~ 2026 - Arith Hsu, Atlas Team 
 
 	This file is part of Atlas.
 
@@ -24,39 +23,80 @@
 
 --]]
 local _G = getfenv(0)
-
-local FOLDER_NAME, private = ...
+local _, private = ...
 
 local LibStub = _G.LibStub
+---@type AtlasAddon
 local Atlas = LibStub("AceAddon-3.0"):GetAddon("Atlas")
+
+local Client = Atlas.Client
+
+if not Client.isRetail then
+	return
+end
 
 local BZ = Atlas_GetLocaleLibBabble("LibBabble-SubZone-3.0")
 local BF = Atlas_GetLocaleLibBabble("LibBabble-Faction-3.0")
 local L = LibStub("AceLocale-3.0"):GetLocale(private.addon_name)
 local ALC = LibStub("AceLocale-3.0"):GetLocale("Atlas")
 
-local BLUE = "|cff6666ff"
-local GREN = "|cff66cc33"
-local LBLU = "|cff33cccc"
-local _RED = "|cffcc3333"
-local ORNG = "|cffcc9933"
-local PINK = "|ccfcc33cc"
-local PURP = "|cff9900ff"
-local WHIT = "|cffffffff"
-local YLOW = "|cffcccc33"
-local INDENT = "      "
-
-local myCategory = L["Outdoor Raid Encounters"]
+local data = {}
+private.data = data
 
 local function sBF(key)
 	return BF[key] and BF[key] or key
 end
 
-local function Atlas_GetBossName(bossname, encounterID, creatureIndex)
+local constants = Atlas.constants
+local labelcolors = constants.colors.labels
+local BLUE = labelcolors.BLUE
+local GREN = labelcolors.GREN
+local _RED = labelcolors._RED
+local ORNG = labelcolors.ORNG
+local PURP = labelcolors.PURP
+local WHIT = labelcolors.WHIT
+local LBLU = labelcolors.LBLU
+local CYAN = labelcolors.CYAN
+local GREY = labelcolors.GREY
+local INDENT = labelcolors.INDENT
+
+-- local helper functions
+local function getBossName(bossname, encounterID, creatureIndex)
 	return Atlas:GetBossName(bossname, encounterID, creatureIndex, private.module_name)
 end
 
-local myData = {
+local function getCreatureName(creatureName, creatureID)
+	return Atlas:GetCreatureName(creatureName, creatureID)
+end
+
+local function getQuestTitlebyID(title, id)
+	return Atlas:GetQuestTitlebyID(title, id)
+end
+
+local function getItemTitlebyID(title, id)
+	return Atlas:GetItemTitlebyID(title, id)
+end
+
+local function getClassName(class)
+	return Atlas_GetClassName(class)
+end
+
+-- local constants for easier access
+local SLASH = ALC["Slash"]
+local COLON = ALC["Colon"]
+local COMMA = ALC["Comma"]
+local L_PAREN = ALC["L-Parenthesis"]
+local R_PAREN = ALC["R-Parenthesis"]
+local ENTRANCE = ALC["Entrance"]
+local WANDERS = ALC["Wanders"]
+local UPPER = ALC["Upper"]
+local CONNECTION = ALC["Connection"]
+local RARE = ALC["Rare"]
+local RANDOM = ALC["Random"]
+local HYPHEN = ALC["Hyphen"]
+
+-- //////////////////////////////////////////////////////////////////////////////
+data.maps = {
 	OR_DragonIsles = {
 		ZoneName = { L["Dragon Isles World Bosses"] },
 		Location = { BZ["Dragon Isles"] },
@@ -65,10 +105,10 @@ local myData = {
 		JournalInstanceID = 1205,
 		WorldMapID = 1978,
 		ALModule = "Atlas_BattleforAzeroth",
-		{ WHIT.." 1) "..Atlas_GetBossName("Strunraan, The Sky's Misery", 2515), 2515 },
-		{ WHIT.." 2) "..Atlas_GetBossName("Liskanoth, The Futurebane", 2518), 2518 },
-		{ WHIT.." 3) "..Atlas_GetBossName("Bazual, The Dreaded Flame", 2517), 2517 },
-		{ WHIT.." 3) "..Atlas_GetBossName("Basrikron, The Shale Wing", 2506), 2506 },
+		{ WHIT.." 1) "..getBossName("Strunraan, The Sky's Misery", 2515), 2515 },
+		{ WHIT.." 2) "..getBossName("Liskanoth, The Futurebane", 2518), 2518 },
+		{ WHIT.." 3) "..getBossName("Bazual, The Dreaded Flame", 2517), 2517 },
+		{ WHIT.." 3) "..getBossName("Basrikron, The Shale Wing", 2506), 2506 },
 	},
 	OR_KulTiras = {
 		ZoneName = { L["Kul Tiras World Bosses"] },
@@ -78,9 +118,9 @@ local myData = {
 		JournalInstanceID = 1028,
 		WorldMapID = 876,
 		ALModule = "Atlas_BattleforAzeroth",
-		{ WHIT.." 1) "..Atlas_GetBossName("Warbringer Yenajz", 2198), 2198 },
-		{ WHIT.." 2) "..Atlas_GetBossName("Azurethos, The Winged Typhoon", 2199), 2199 },
-		{ WHIT.." 3) "..Atlas_GetBossName("Hailstone Construct", 2197), 2197 },
+		{ WHIT.." 1) "..getBossName("Warbringer Yenajz", 2198), 2198 },
+		{ WHIT.." 2) "..getBossName("Azurethos, The Winged Typhoon", 2199), 2199 },
+		{ WHIT.." 3) "..getBossName("Hailstone Construct", 2197), 2197 },
 	},
 	OR_Zandalar = {
 		ZoneName = { L["Zandalar World Bosses"] },
@@ -90,11 +130,11 @@ local myData = {
 		JournalInstanceID = 1028,
 		WorldMapID = 875,
 		ALModule = "Atlas_BattleforAzeroth",
-		{ WHIT.." 1) "..Atlas_GetBossName("Dunegorger Kraulok", 2210), 2210 },
-		{ WHIT..INDENT..Atlas_GetBossName("Ravenous Ranishu", 2210, 2) },
-		{ WHIT.." 2) "..Atlas_GetBossName("Ji'arak", 2141), 2141 },
-		{ WHIT..INDENT..Atlas_GetBossName("Ji'arak Broodling", 2141, 2) },
-		{ WHIT.." 3) "..Atlas_GetBossName("T'zane", 2139), 2139 },
+		{ WHIT.." 1) "..getBossName("Dunegorger Kraulok", 2210), 2210 },
+		{ WHIT..INDENT..getBossName("Ravenous Ranishu", 2210, 2) },
+		{ WHIT.." 2) "..getBossName("Ji'arak", 2141), 2141 },
+		{ WHIT..INDENT..getBossName("Ji'arak Broodling", 2141, 2) },
+		{ WHIT.." 3) "..getBossName("T'zane", 2139), 2139 },
 	},
 	OR_Azeroth = {
 		ZoneName = { L["Eastern Kingdoms World Bosses"] },
@@ -104,14 +144,14 @@ local myData = {
 		JournalInstanceID = 1028,
 		WorldMapID = 13,
 		ALModule = "Atlas_BattleforAzeroth",
-		{ WHIT.." 1) "..Atlas_GetBossName("The Lion's Roar", 2212), 2212 },
-		{ WHIT..INDENT..Atlas_GetBossName("Lion's Engineer", 2212, 2) },
-		{ WHIT..INDENT..Atlas_GetBossName("Lion's Shieldbearer", 2212, 3) },
-		{ WHIT..INDENT..Atlas_GetBossName("Lion's Warcaster", 2212, 4) },
-		{ WHIT.." 2) "..Atlas_GetBossName("Doom's Howl", 2213), 2213 },
-		{ WHIT..INDENT..Atlas_GetBossName("Doom's Howl Engineer", 2213, 2) },
-		{ WHIT..INDENT..Atlas_GetBossName("Doom's Howl Dreadshield", 2213, 3) },
-		{ WHIT..INDENT..Atlas_GetBossName("Doom's Howl Warcaster", 2213, 4) },
+		{ WHIT.." 1) "..getBossName("The Lion's Roar", 2212), 2212 },
+		{ WHIT..INDENT..getBossName("Lion's Engineer", 2212, 2) },
+		{ WHIT..INDENT..getBossName("Lion's Shieldbearer", 2212, 3) },
+		{ WHIT..INDENT..getBossName("Lion's Warcaster", 2212, 4) },
+		{ WHIT.." 2) "..getBossName("Doom's Howl", 2213), 2213 },
+		{ WHIT..INDENT..getBossName("Doom's Howl Engineer", 2213, 2) },
+		{ WHIT..INDENT..getBossName("Doom's Howl Dreadshield", 2213, 3) },
+		{ WHIT..INDENT..getBossName("Doom's Howl Warcaster", 2213, 4) },
 	},
 	OR_Kalimdor = {
 		ZoneName = { L["Kalimdor World Bosses"] },
@@ -121,8 +161,8 @@ local myData = {
 		JournalInstanceID = 1028,
 		WorldMapID = 12,
 		ALModule = "Atlas_BattleforAzeroth",
-		{ WHIT.." 1) "..Atlas_GetBossName("Ivus the Forest Lord", 2329), 2329 },
-		{ WHIT.." 2) "..Atlas_GetBossName("Ivus the Decayed", 2345), 2345 },
+		{ WHIT.." 1) "..getBossName("Ivus the Forest Lord", 2329), 2329 },
+		{ WHIT.." 2) "..getBossName("Ivus the Decayed", 2345), 2345 },
 	},
 	OR_BrokenIsles = {
 		ZoneName = { L["Broken Isles World Bosses"] },
@@ -133,26 +173,26 @@ local myData = {
 		WorldMapID = 619,
 		LargeMap = "OR_BrokenIsles",
 		ALModule = "Atlas_Legion",
-		{ WHIT.." 1) "..Atlas_GetBossName("Calamir", 1774)..ORNG..ALC["L-Parenthesis"]..sBF("Court of Farondis")..ALC["R-Parenthesis"], 1774 },		-- (Azsuna)
-		{ WHIT.." 2) "..Atlas_GetBossName("Withered J'im", 1796)..ORNG..ALC["L-Parenthesis"]..sBF("The Wardens")..ALC["R-Parenthesis"], 1796 },		-- (Azsuna)
-		{ WHIT.." 3) "..Atlas_GetBossName("Levantus", 1769)..ORNG..ALC["L-Parenthesis"]..sBF("Court of Farondis")..ALC["R-Parenthesis"], 1769 },	-- (Azsuna)
-		{ WHIT.." 4) "..Atlas_GetBossName("Humongris", 1770), 1770 },				-- (Val'sharah)
-		{ WHIT.." 5) "..Atlas_GetBossName("Shar'thos", 1763), 1763 },				-- (Val'sharah)
-		{ WHIT.." 6) "..Atlas_GetBossName("Drugon the Frostblood", 1789), 1789 },		-- (Highmountain)
-		{ WHIT.." 7) "..Atlas_GetBossName("Flotsam", 1795)..ORNG..ALC["L-Parenthesis"]..sBF("Highmountain Tribe")..ALC["R-Parenthesis"], 1795 },	-- (Highmountain)
-		{ WHIT.." 8) "..Atlas_GetBossName("Ana-Mouz", 1790)..ORNG..ALC["L-Parenthesis"]..sBF("The Nightfallen")..ALC["R-Parenthesis"], 1790 },		-- (Stormheim)
-		{ WHIT.." 9) "..Atlas_GetBossName("The Soultakers", 1756), 1756 },			-- (Stormheim)
-		{ INDENT..WHIT..Atlas_GetBossName("Soultrapper Mevra", 1756, 1), 1756 },
-		{ INDENT..WHIT..Atlas_GetBossName("Captain Hring", 1756, 2), 1756 },
-		{ INDENT..WHIT..Atlas_GetBossName("Reaver Jdorn", 1756, 3), 1756 },
-		{ WHIT.."10) "..Atlas_GetBossName("Nithogg", 1749), 1749 },				-- (Stormheim)
-		{ WHIT.."11) "..Atlas_GetBossName("Na'zak the Fiend", 1783), 1783 },			-- (Suramar)
-		{ WHIT.."12) "..Atlas_GetBossName("Brutallus", 1883)..ORNG..ALC["L-Parenthesis"]..sBF("Armies of Legionfall")..ALC["R-Parenthesis"], 1883 },
-		{ WHIT.."13) "..Atlas_GetBossName("Malificus", 1884)..ORNG..ALC["L-Parenthesis"]..sBF("Armies of Legionfall")..ALC["R-Parenthesis"], 1884 },
-		{ WHIT.."14) "..Atlas_GetBossName("Si'vash", 1885)..ORNG..ALC["L-Parenthesis"]..sBF("Armies of Legionfall")..ALC["R-Parenthesis"], 1885 },
-		{ WHIT.."15) "..Atlas_GetBossName("Apocron", 1956)..ORNG..ALC["L-Parenthesis"]..sBF("Armies of Legionfall")..ALC["R-Parenthesis"], 1956 },
+		{ WHIT.." 1) "..getBossName("Calamir", 1774)..ORNG..L_PAREN..sBF("Court of Farondis")..R_PAREN, 1774 },		-- (Azsuna)
+		{ WHIT.." 2) "..getBossName("Withered J'im", 1796)..ORNG..L_PAREN..sBF("The Wardens")..R_PAREN, 1796 },		-- (Azsuna)
+		{ WHIT.." 3) "..getBossName("Levantus", 1769)..ORNG..L_PAREN..sBF("Court of Farondis")..R_PAREN, 1769 },	-- (Azsuna)
+		{ WHIT.." 4) "..getBossName("Humongris", 1770), 1770 },				-- (Val'sharah)
+		{ WHIT.." 5) "..getBossName("Shar'thos", 1763), 1763 },				-- (Val'sharah)
+		{ WHIT.." 6) "..getBossName("Drugon the Frostblood", 1789), 1789 },		-- (Highmountain)
+		{ WHIT.." 7) "..getBossName("Flotsam", 1795)..ORNG..L_PAREN..sBF("Highmountain Tribe")..R_PAREN, 1795 },	-- (Highmountain)
+		{ WHIT.." 8) "..getBossName("Ana-Mouz", 1790)..ORNG..L_PAREN..sBF("The Nightfallen")..R_PAREN, 1790 },		-- (Stormheim)
+		{ WHIT.." 9) "..getBossName("The Soultakers", 1756), 1756 },			-- (Stormheim)
+		{ INDENT..WHIT..getBossName("Soultrapper Mevra", 1756, 1), 1756 },
+		{ INDENT..WHIT..getBossName("Captain Hring", 1756, 2), 1756 },
+		{ INDENT..WHIT..getBossName("Reaver Jdorn", 1756, 3), 1756 },
+		{ WHIT.."10) "..getBossName("Nithogg", 1749), 1749 },				-- (Stormheim)
+		{ WHIT.."11) "..getBossName("Na'zak the Fiend", 1783), 1783 },			-- (Suramar)
+		{ WHIT.."12) "..getBossName("Brutallus", 1883)..ORNG..L_PAREN..sBF("Armies of Legionfall")..R_PAREN, 1883 },
+		{ WHIT.."13) "..getBossName("Malificus", 1884)..ORNG..L_PAREN..sBF("Armies of Legionfall")..R_PAREN, 1884 },
+		{ WHIT.."14) "..getBossName("Si'vash", 1885)..ORNG..L_PAREN..sBF("Armies of Legionfall")..R_PAREN, 1885 },
+		{ WHIT.."15) "..getBossName("Apocron", 1956)..ORNG..L_PAREN..sBF("Armies of Legionfall")..R_PAREN, 1956 },
 		{ "" },
-		{ LBLU..ACHIEVEMENTS..ALC["Colon"] },
+		{ LBLU..ACHIEVEMENTS..COLON },
 		{ "Unleashed Monstrosities", "ac=11160" },
 		{ "Terrors of the Shore", "ac=11786" },
 	},
@@ -165,13 +205,13 @@ local myData = {
 		WorldMapID = 646,
 		LargeMap = "OR_BrokenShore",
 		ALModule = "Atlas_Legion",
-		{ WHIT.."12) "..Atlas_GetBossName("Brutallus", 1883), 1883 },
-		{ WHIT.."13) "..Atlas_GetBossName("Malificus", 1884), 1884 },
-		{ INDENT..ORNG..ALC["L-Parenthesis"]..sBF("Armies of Legionfall")..ALC["R-Parenthesis"] },
-		{ WHIT.."14) "..Atlas_GetBossName("Si'vash", 1885), 1885 },
-		{ WHIT.."15) "..Atlas_GetBossName("Apocron", 1956), 1956 },
+		{ WHIT.."12) "..getBossName("Brutallus", 1883), 1883 },
+		{ WHIT.."13) "..getBossName("Malificus", 1884), 1884 },
+		{ INDENT..ORNG..L_PAREN..sBF("Armies of Legionfall")..R_PAREN },
+		{ WHIT.."14) "..getBossName("Si'vash", 1885), 1885 },
+		{ WHIT.."15) "..getBossName("Apocron", 1956), 1956 },
 		{ "" },
-		{ LBLU..ACHIEVEMENTS..ALC["Colon"] },
+		{ LBLU..ACHIEVEMENTS..COLON },
 		{ "Terrors of the Shore", "ac=11786" },
 	},
 	OR_Draenor = {
@@ -183,15 +223,15 @@ local myData = {
 		WorldMapID = 572,
 		LargeMap = "OR_Draenor",
 		ALModule = "Atlas_WarlordsofDraenor",
-		{ WHIT.." 1) "..Atlas_GetBossName("Drov the Ruiner", 1291), 1291 },
-		{ WHIT..INDENT..Atlas_GetBossName("Frenzied Rumbler", 1291, 2), 1291 },
-		{ WHIT.." 2) "..Atlas_GetBossName("Tarlna the Ageless", 1211), 1211 },
-		{ WHIT..INDENT..Atlas_GetBossName("Giant Lasher", 1211, 3), 1211 },
-		{ WHIT..INDENT..Atlas_GetBossName("Untamed Mandragora", 1211, 2), 1211 },
-		{ WHIT.." 3) "..Atlas_GetBossName("Rukhmar", 1262), 1262 },
-		{ WHIT.." 4) "..Atlas_GetBossName("Supreme Lord Kazzak", 1452), 1452 },
+		{ WHIT.." 1) "..getBossName("Drov the Ruiner", 1291), 1291 },
+		{ WHIT..INDENT..getBossName("Frenzied Rumbler", 1291, 2), 1291 },
+		{ WHIT.." 2) "..getBossName("Tarlna the Ageless", 1211), 1211 },
+		{ WHIT..INDENT..getBossName("Giant Lasher", 1211, 3), 1211 },
+		{ WHIT..INDENT..getBossName("Untamed Mandragora", 1211, 2), 1211 },
+		{ WHIT.." 3) "..getBossName("Rukhmar", 1262), 1262 },
+		{ WHIT.." 4) "..getBossName("Supreme Lord Kazzak", 1452), 1452 },
 		{ "" },
-		{ LBLU..ACHIEVEMENTS..ALC["Colon"] },
+		{ LBLU..ACHIEVEMENTS..COLON },
 		{ "Goliaths of Gorgrond", "ac=9423" },
 		{ "So Grossly Incandescent", "ac=9425" },
 		{ "The Legion Will NOT Conquer All", "ac=10071" },
@@ -205,20 +245,20 @@ local myData = {
 		WorldMapID = 424,
 		LargeMap = "OR_Pandaria",
 		ALModule = "Atlas_MistsofPandaria",
-		{ WHIT.." 1) "..Atlas_GetBossName("Nalak, The Storm Lord", 814), 814 },
-		{ WHIT.." 2) "..Atlas_GetBossName("Oondasta", 826), 826 },
-		{ WHIT.." 3) "..Atlas_GetBossName("Sha of Anger", 691), 691 },
-		{ WHIT.." 4) "..Atlas_GetBossName("Salyis's Warband", 725), 725 },
-		{ WHIT..INDENT..Atlas_GetBossName("Galleon", 725, 1), 725 },
-		{ WHIT..INDENT..Atlas_GetBossName("Chief Salyis", 725, 2), 725 },
-		{ WHIT.." 5) "..Atlas_GetBossName("Ordos, Fire-God of the Yaungol", 861), 861 },
+		{ WHIT.." 1) "..getBossName("Nalak, The Storm Lord", 814), 814 },
+		{ WHIT.." 2) "..getBossName("Oondasta", 826), 826 },
+		{ WHIT.." 3) "..getBossName("Sha of Anger", 691), 691 },
+		{ WHIT.." 4) "..getBossName("Salyis's Warband", 725), 725 },
+		{ WHIT..INDENT..getBossName("Galleon", 725, 1), 725 },
+		{ WHIT..INDENT..getBossName("Chief Salyis", 725, 2), 725 },
+		{ WHIT.." 5) "..getBossName("Ordos, Fire-God of the Yaungol", 861), 861 },
 		{ WHIT.." 6) "..sBF("The August Celestials") },
-		{ WHIT..INDENT..Atlas_GetBossName("Chi-Ji, The Red Crane", 857), 857 },
-		{ WHIT..INDENT..Atlas_GetBossName("Niuzao, The Black Ox", 859), 859 },
-		{ WHIT..INDENT..Atlas_GetBossName("Xuen, The White Tiger", 860), 860 },
-		{ WHIT..INDENT..Atlas_GetBossName("Yu'lon, The Jade Serpent", 858), 858 },
+		{ WHIT..INDENT..getBossName("Chi-Ji, The Red Crane", 857), 857 },
+		{ WHIT..INDENT..getBossName("Niuzao, The Black Ox", 859), 859 },
+		{ WHIT..INDENT..getBossName("Xuen, The White Tiger", 860), 860 },
+		{ WHIT..INDENT..getBossName("Yu'lon, The Jade Serpent", 858), 858 },
 		{ "" },
-		{ LBLU..ACHIEVEMENTS..ALC["Colon"] },
+		{ LBLU..ACHIEVEMENTS..COLON },
 		{ "Praise the Sun!", "ac=8028" },
 		{ "Millions of Years of Evolution vs. My Fist", "ac=8123" },
 		{ "Settle Down, Bro", "ac=6480" },
@@ -238,41 +278,41 @@ local myData = {
 		{ WHIT..INDENT..L["Grella <Skyguard Quartermaster>"] },
 		{ WHIT..INDENT..L["Hazzik"] },
 		{ WHIT.."2) "..L["Ancient Skull Pile"], 10002 },
-		{ WHIT..INDENT..L["Terokk"]..ALC["L-Parenthesis"]..ALC["Summon"]..ALC["R-Parenthesis"] },
+		{ WHIT..INDENT..L["Terokk"]..L_PAREN..ALC["Summon"]..R_PAREN },
 		{ WHIT.."3) "..L["Sahaak <Keeper of Scrolls>"], 10003 },
-		{ WHIT.."4) "..L["Skyguard Prisoner"]..ALC["L-Parenthesis"]..ALC["Random"]..ALC["R-Parenthesis"], 10004 },
+		{ WHIT.."4) "..L["Skyguard Prisoner"]..L_PAREN..RANDOM..R_PAREN, 10004 },
 		{ WHIT.."5) "..L["Talonpriest Ishaal"], 10005 },
 		{ WHIT.."6) "..L["Talonpriest Skizzik"], 10006 },
 		{ WHIT.."7) "..L["Talonpriest Zellek"], 10007 },
 		{ WHIT.."8) "..L["Hazzik's Package"], 10008 },
 		{ WHIT.."9) "..ALC["Graveyard"], 10009 },
 		{ GREN.."1') "..L["Skull Pile"], 10010 },
-		{ GREN..INDENT..L["Darkscreecher Akkarai"]..ALC["L-Parenthesis"]..ALC["Summon"]..ALC["R-Parenthesis"] },
-		{ GREN..INDENT..L["Gezzarak the Huntress"]..ALC["L-Parenthesis"]..ALC["Summon"]..ALC["R-Parenthesis"] },
-		{ GREN..INDENT..L["Karrog"]..ALC["L-Parenthesis"]..ALC["Summon"]..ALC["R-Parenthesis"] },
-		{ GREN..INDENT..L["Vakkiz the Windrager"]..ALC["L-Parenthesis"]..ALC["Summon"]..ALC["R-Parenthesis"] },
+		{ GREN..INDENT..L["Darkscreecher Akkarai"]..L_PAREN..ALC["Summon"]..R_PAREN },
+		{ GREN..INDENT..L["Gezzarak the Huntress"]..L_PAREN..ALC["Summon"]..R_PAREN },
+		{ GREN..INDENT..L["Karrog"]..L_PAREN..ALC["Summon"]..R_PAREN },
+		{ GREN..INDENT..L["Vakkiz the Windrager"]..L_PAREN..ALC["Summon"]..R_PAREN },
 	},
 	OR_DoomLordKazzak = {
-		ZoneName = { Atlas_GetBossName("Doom Lord Kazzak") },
+		ZoneName = { getCreatureName("Doom Lord Kazzak", 18728) },
 		Location = { BZ["Hellfire Peninsula"] },
 		LevelRange = "30+",
 		PlayerLimit = "40",
-		{ WHIT.."1) "..Atlas_GetBossName("Doom Lord Kazzak"), 10001 },
+		{ WHIT.."1) "..getCreatureName("Doom Lord Kazzak", 18728), 10001 },
 		{ WHIT.."2) "..BZ["Invasion Point: Annihilator"], 10002 },
 		{ WHIT.."3) "..BZ["Forge Camp: Rage"], 10003 },
 		{ WHIT.."4) "..BZ["Forge Camp: Mageddon"], 10004 },
 		{ WHIT.."5) "..BZ["Thrallmar"], 10005 },
 	},
 	OR_Doomwalker = {
-		ZoneName = { Atlas_GetBossName("Doomwalker") },
+		ZoneName = { getCreatureName("Doomwalker", 17711) },
 		Location = { BZ["Shadowmoon Valley"] },
 		LevelRange = "30+",
 		PlayerLimit = "40",
-		{ WHIT.."1) "..Atlas_GetBossName("Doomwalker"), 10001 },
+		{ WHIT.."1) "..getCreatureName("Doomwalker", 17711), 10001 },
 	},
 }
 
-local myDB = {
+data.coords = {
 	OR_DragonIsles = {
 		{ 1, 2515, 294, 348 },
 		{ 2, 2518, 20, 20 },
@@ -371,4 +411,3 @@ local myDB = {
 	},
 }
 
-Atlas:RegisterPlugin(private.addon_name, myCategory, myData, myDB)
