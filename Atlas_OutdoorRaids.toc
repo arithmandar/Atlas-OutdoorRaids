@@ -1,4 +1,4 @@
-﻿## Interface: 11509, 16001, 20506, 50504, 120100
+﻿## Interface: 11509, 20506, 50504, 120100
 ## Title: Atlas Outdoor Raids
 ## Notes: Outdoor raid encounter maps for Atlas
 ## Title-deDE: Atlas Freiluft-Schlachtzüge

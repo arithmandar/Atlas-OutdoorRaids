@@ -7,6 +7,10 @@ Copyright 2011 ~ 2026 - Arith Hsu, Atlas Team
 = Change Log =
 ==============
 
+1.53.01 (Oct. 14, 2026)
+------------------------
+- zhTW localization file bug fix
+
 v1.53.00 (Oct. 14, 2026)
 ------------------------
 - Toc update to support WoW 11509, 20506, 50504, 120100
